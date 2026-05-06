@@ -6,22 +6,33 @@
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: radial-gradient(circle at top, #0f1624, #0d1117);
+  background: radial-gradient(1200px circle at 10% 10%, #1f2a44, transparent),
+              radial-gradient(1000px circle at 90% 20%, #0b3d2e, transparent),
+              linear-gradient(180deg, #0d1117, #020617);
   color: #e6edf3;
   min-height: 100vh;
+  letter-spacing: 0.3px;
+  transition: background 0.3s ease;
 }
+
 
 /* ===== HEADER ===== */
 header {
-  padding: 22px;
+  padding: 24px;
   text-align: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 header h2 {
   font-weight: 600;
+  font-size: 1.6rem;
   background: linear-gradient(90deg, #58a6ff, #2ea043);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -30,77 +41,95 @@ header h2 {
 .search-box {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: 35px 0;
 }
 
 .search-box form {
   display: flex;
-  gap: 12px;
+  gap: 14px;
 }
 
 input {
-  width: 280px;
+  width: 300px;
   padding: 14px 16px;
   background: #010409;
   color: #e6edf3;
   border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
 }
 
 input:focus {
   outline: none;
   border-color: #58a6ff;
+  box-shadow: 0 0 0 2px rgba(88,166,255,0.2);
 }
 
 /* ===== BUTTON ===== */
 button {
-  padding: 14px 22px;
-  background: #23863f;
+  padding: 14px 24px;
+  background: linear-gradient(90deg,#23863f,#2ea043);
   color: white;
-  border:solid 1px #23863f;
-  border-radius: 10px;
-  font-weight:bold;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(46,160,67,0.35);
 }
 
 /* ===== STATUS ===== */
 #status {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   color: #9aa4af;
+  font-size: 0.95rem;
 }
 
 /* ===== USERS GRID ===== */
 #users {
-  padding: 25px;
+  padding: 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
 }
 
 /* ===== USER CARD ===== */
 .card {
   background: rgba(22, 27, 34, 0.85);
-  padding: 18px;
-  border-radius: 14px;
+  padding: 22px;
+  border-radius: 16px;
   text-align: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
 
 .card img {
-  width: 90px;
-  height: 90px;
+  width: 95px;
+  height: 95px;
   border-radius: 50%;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  border: 2px solid rgba(255,255,255,0.08);
+  transition: 0.2s ease;
+}
+
+.card img:hover {
+  transform: scale(1.05);
 }
 
 .card h3 {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
 }
 
 .card a {
@@ -109,15 +138,43 @@ button {
   font-weight: 500;
 }
 
+.card a:hover {
+  text-decoration: underline;
+}
+
 /* ===== PAGINATION ===== */
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 14px;
-  padding-bottom: 30px;
+  gap: 12px;
+  padding-bottom: 35px;
 }
 
-.pagenum{
-  padding:20px;
-  margin:10px
+.pagenum {
+  padding: 10px 14px;
+  background: #161b22;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagenum:hover {
+  background: #21262d;
+}
+
+.pagenum.active {
+  background: #58a6ff;
+  color: #0d1117;
+  font-weight: 600;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 500px) {
+  input {
+    width: 200px;
+  }
+
+  header h2 {
+    font-size: 1.3rem;
+  }
 }
