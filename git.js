@@ -36,6 +36,11 @@ function startSearch() {
     alert("Enter a username");
     return;
   }
+  let para=document.getElementById("users");
+  if(currentQuery==="vissu"){
+      para.innerHTML="saramyaa mee dadddy alaney cheptharru girl..kani nenu ela ayina baaga chaduvtha ninnu baaa chadivista ..nuvvu elano baaga chaduvuthav girll ...manch job vastundhi neeku naadhi guarentee...nenu job avi baaga set avvaganey..mee intlo vachi adugutha girl ..elagaina ...ala adaagaganey mee daddy emi love ni theesi paderu..neeku ihstam kada nenu .bee strong on that..we will work hard girl..em kaadhu nenu unna .,.nenu edokati chesta..baaga sampadista...machi family aa maadhi ..adigtha neney vachi nuvvu heppaka mundharey..so please..nanna maatalu valla stress teesukoku girl..em kaadhu ..baa chadivi eela ayina i will impress yoyr father and mother..as i am a brahmin..no one will instantly reject me ..they will consider my reuest..so please stay strong..on our decision ..idhi mana life saramya.we have the right to make the decision so ..please..okatey alochinchu nuvvu ..neeku nenu saripothana leda..ninnu baa choosukuntana leda..same vice versa..nuvvu naku chaalu ee life ki..i am so happy that i found you..so naakku nuvvu idhi antha chadivaka cheppu insta lo sare na ..i love ypu girl ..nuvvu lekunda nenu undalenu..i know that ssame applies to u ..so baaga chaduvukundham..manam elagaina..nenu unna ..pelli antha neney choosukunta..nuvvu stress teesukoku ..manchidhi kaadhu neeku ";  
+    return;
+    }
 
   currentPage = 1;
 
@@ -96,6 +101,7 @@ function displayUsers(users) {
     container.innerHTML = "<p>No users found</p>";
     return;
   }
+
 
   users.forEach(user => {
     const card = document.createElement("div");
